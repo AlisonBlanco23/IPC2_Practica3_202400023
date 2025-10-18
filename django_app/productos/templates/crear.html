@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Crear Nuevo Producto</h2>
+<form method="post" style="max-width: 1000px; margin: 0 auto;">
+    {% csrf_token %}
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Categoría:</label>
+    <input type="text" name="categoria" required>
+
+    <label>Descripción:</label>
+    <textarea name="descripcion" rows="4" required></textarea>
+
+    <label>Precio (Q):</label>
+    <input type="number" step="0.01" name="precio" min="0" required>
+
+    <label>Cantidad en stock:</label>
+    <input type="number" name="cantidad" min="0" required>
+
+    <label>Fecha de vencimiento (opcional):</label>
+    <input type="date" name="fecha_vencimiento">
+
+    <button type="submit" class="btn btn-success">Crear Producto</button>
+    <a href="{% url 'lista_productos' %}" class="btn">Cancelar</a>
+</form>
+{% endblock %}

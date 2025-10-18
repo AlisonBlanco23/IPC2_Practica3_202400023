@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Productos</h2>
+{% if productos %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio (Q)</th>
+            <th>Stock</th>
+            <th>Vencimiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in productos %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td><a href="{% url 'detalle_producto' p.id %}">{{ p.nombre }}</a></td>
+            <td>{{ p.categoria }}</td>
+            <td>{{ p.precio|stringformat:"s" }}</td>
+            <td>{{ p.cantidad|stringformat:"s" }}</td>
+            <td>
+                {% if p.fecha_vencimiento %}
+                    {{ p.fecha_vencimiento|slice:"8:10" }}/{{ p.fecha_vencimiento|slice:"5:7" }}/{{ p.fecha_vencimiento|slice:"0:4" }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </td>
+            <td class="acciones">
+                <a href="{% url 'editar_producto' p.id %}" class="btn">✏️ Editar</a>
+                <a href="{% url 'eliminar_producto' p.id %}" 
+                   onclick="return confirm('¿Está seguro de eliminar este producto?')" 
+                   class="btn btn-danger">🗑️ Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No hay productos en el inventario.</p>
+{% endif %}
+{% endblock %}

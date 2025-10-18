@@ -1,0 +1,132 @@
+/* Fondo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #2c3e50;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 600;
+}
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 8px;
+    margin-top: 10px;
+}
+.btn:hover {
+    background: #2980b9;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+.btn-success {
+    background: #2ecc71;
+}
+.btn-success:hover {
+    background: #27ae60;
+}
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+/* Mensajes */
+.messages ul {
+    list-style: none;
+    padding: 0;
+}
+.messages li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.error {
+    background: #ffe6e6;
+    color: #c00;
+    border-left: 4px solid #ff6b6b;
+}
+.success {
+    background: #e6ffe6;
+    color: #080;
+    border-left: 4px solid #2ecc71;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #edf2f7;
+}
+th {
+    background: #f1f5f9;
+    color: #2c3e50;
+    font-weight: 600;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:hover {
+    background: #f8fafc;
+}
+.acciones a {
+    margin-right: 8px;
+}
+
+/* Formularios */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
